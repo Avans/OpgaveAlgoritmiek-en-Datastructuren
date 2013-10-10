@@ -1,5 +1,5 @@
 # Week 4
-## Week 4.1.1
+## Week 4.2.1
 De opgave is om deze simulatie te maken EN daar gebruik te maken 
 van een queue. Hou je aan het OO paradigma: maak bijvoorbeeld een 
 aparte Queue–klasse. Breid de Queue–klasse uit met een methode 
@@ -146,7 +146,7 @@ class Program
     }
 ```
 
-## Week 4.1.2
+## Week 4.2.2
 Run je applicatie en ga na wanneer de rijen bij de kassas erg lang 
 worden en wanneer klanten goed geholpen worden.
 
@@ -155,5 +155,4 @@ Indien registerSpeed kleiner of gelijk is aan MaxNewCostumersPerTick dan zal de 
 
 ## Week 4.2.1
 Lever de broncode in.
-_De broncode die we gebruikt hebben voor Week 4 is de zelde stack als we gemaakt hadden voor 4.1._
-TODO
+_De broncode die we gebruikt hebben voor Week 4 is de zelde stack als we gemaakt hadden voor 4.2._
