@@ -155,4 +155,60 @@ Indien registerSpeed kleiner of gelijk is aan MaxNewCostumersPerTick dan zal de 
 
 ## Week 4.2.1
 Lever de broncode in.
-_De broncode die we gebruikt hebben voor Week 4 is de zelde stack als we gemaakt hadden voor 4.2._
+```C#
+static void Main(string[] args)
+        {
+            LinkedStack theStack = new LinkedStack();
+            string line = "D{I(I{W()})}W()";
+
+            foreach (char item in line)
+            {
+                switch (item)
+                {
+                    case 'D':
+                    case 'I':
+                    case '{':
+                    case '[':
+                    case '(':
+                        theStack.push(item.ToString()); // push them
+                        break;
+                    case 'E':
+                    case 'W':
+                    case '}':
+                    case ']':
+                    case ')':
+                        if (!theStack.isEmpty()) // if stack not empty,
+                        {
+                            char last = theStack.pop()[0]; // pop and check
+
+                            if ((item == '}' && last != '{') ||
+                                (item == ']' && last != '[') ||
+                                (item == ')' && last != '(') ||
+                                (item == 'E' && last != 'I') ||
+                                (item == 'W' && last != 'D'))
+                            {
+                                //'parent' block closed, no else or while found. Remove If en Do.
+                                if (last == 'I')
+                                    theStack.pop();
+
+                                else if (last == 'D')
+                                    theStack.pop();
+                                else
+                                {
+                                    throw new Exception("Error: " + item + " last found:" + last);
+                                }
+
+                            }
+                        }
+                        else // prematurely empty
+                            throw new Exception("Error: " + item);
+                        break;
+                    default: // no action on other characters
+                        break;
+                } // end switch
+            } // end for
+
+            Console.WriteLine("Code is valid");
+            Console.Read();
+        }
+```
