@@ -58,8 +58,24 @@ Schrijf een insertion sort algoritme waarvan eerst de sub–array vanaf
 een bepaalde waarde tot aan rij.length-1 inwendig gesorteerd is.
 
 ```C#
-TODO
+public static void InsertionSortInverted(int[] array)
+        {
+            int outer, inner;
+            for (outer = AANTAL - 1; outer >= 0; outer--)
+            {
+                int temp = array[outer];
+                inner = outer;
+                while (inner < AANTAL-1 && array[inner + 1] <= temp)
+                {
+                    array[inner] = array[inner + 1];
+                    ++inner;
+                }
+                array[inner] = temp;
+            }
+        }
 ```
 
 Beredeneer dat het algoritme van O(N2) is.
+_Het is O(N2) omdat er nogsteeds twee loops zijn welke beide groter worden met een grotere input._
+
 
